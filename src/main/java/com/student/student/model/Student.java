@@ -19,4 +19,12 @@ public class Student {
     private String phone_no;
     private List<Course> courses_name;
 
+    public List<Course> getCourses_name() {
+        return courses_name;
+    }
+
+    public void setCourses_name(List<Course> courses_name) {
+        this.courses_name = courses_name;
+    }
+
 }

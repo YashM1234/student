@@ -9,4 +9,8 @@ import lombok.NoArgsConstructor;
 public class Course {
     private int courseId;
     private String courseName;
+
+    public Course(String course_name) {
+        this.setCourseName(course_name);
+    }
 }
