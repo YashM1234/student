@@ -26,5 +26,4 @@ public class Student {
     public void setCourses_name(List<Course> courses_name) {
         this.courses_name = courses_name;
     }
-
 }

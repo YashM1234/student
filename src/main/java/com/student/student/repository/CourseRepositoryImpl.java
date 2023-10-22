@@ -2,13 +2,8 @@ package com.student.student.repository;
 
 import com.student.student.model.Course;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 @Repository
 public class CourseRepositoryImpl implements CourseRepository{

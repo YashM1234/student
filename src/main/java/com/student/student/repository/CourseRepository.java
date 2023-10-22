@@ -2,10 +2,9 @@ package com.student.student.repository;
 
 import com.student.student.model.Course;
 
-import java.util.List;
-
 public interface CourseRepository {
     String createCourse(Course course);
+
 //    String addCourse(Course course);
 //
 //    String addMultipleCourse(List<Course> courses);
