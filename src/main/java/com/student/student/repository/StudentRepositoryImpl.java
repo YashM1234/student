@@ -19,11 +19,13 @@ public class StudentRepositoryImpl implements StudentRepository{
         this.dataSource = dataSource;
         this.jdbcTemplate = jdbcTemplate;
     }
-    //    <----------insert student--------->
+
+    //    <----------insert single student--------->
     @Override
     public String insertStudent(Student student) {
         try{
-            String query = "insert into student(fname,lname,age,branch,year,semester,phone_no) values('" + student.getFName() + "', '" + student.getLName() + "', "
+            String query = "insert into student(fname,lname,age,branch,year,semester,phone_no) values('"
+                    + student.getFName() + "', '" + student.getLName() + "', "
                 + student.getAge() + ", '" + student.getBranch() + "', " + student.getYear() + ", "
                 + student.getSemester() + ", '" + student.getPhone_no() + "')";
             jdbcTemplate.update(query);
@@ -39,11 +41,13 @@ public class StudentRepositoryImpl implements StudentRepository{
         }
     }
 
+    //<----------insert student list--------->
     @Override
     public String insertMultipleStudent(List<Student> students) {
         try{
             for(Student student: students) {
-                String query = "insert into student(fname,lname,age,branch,year,semester,phone_no) values('" + student.getFName() + "', '" + student.getLName() + "', "
+                String query = "insert into student(fname,lname,age,branch,year,semester,phone_no) values('"
+                        + student.getFName() + "', '" + student.getLName() + "', "
                         + student.getAge() + ", '" + student.getBranch() + "', " + student.getYear() + ", "
                         + student.getSemester() + ", '" + student.getPhone_no() + "')";
                 jdbcTemplate.update(query);
@@ -60,6 +64,7 @@ public class StudentRepositoryImpl implements StudentRepository{
         }
     }
 
+    //<----------get student list--------->
     @Override
     public List<Student> getAllStudent() {
         try{
@@ -113,6 +118,7 @@ public class StudentRepositoryImpl implements StudentRepository{
         return null;
     }
 
+    //<----------get list of student who enroll in particular course--------->
     @Override
     public List<Student> getStudentListByCourse(String courseName) {
         try{
