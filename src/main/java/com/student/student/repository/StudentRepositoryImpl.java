@@ -194,18 +194,17 @@ public class StudentRepositoryImpl implements StudentRepository{
     }
 
     private List<Course> getCourseList(int studentId){
-        String query = "select course_id, course_name from course where student_id = ?";
+        String query = "select course_enrol_id, course_name from course where student_id = ?";
         return jdbcTemplate.query(query, (rs, rowNum) ->
-                new Course(rs.getInt("course_id"), rs.getString("course_name")), studentId);
+                new Course(rs.getInt("course_enrol_id"), rs.getString("course_name")), studentId);
     }
 
     private void updateCourse(Student student, int studentId){
-        String query = "update course set course_name = ? where student_id = ? and course_id = ?";
+        String query = "update course set course_name = ? where student_id = ? and course_enrol_id = ?";
         for(Course course: student.getCourses_name()){
-            jdbcTemplate.update(query, course.getCourseName(), studentId, course.getCourseId());
+            jdbcTemplate.update(query, course.getCourseName(), studentId, course.getCourseEnrolId());
         }
     }
-
 
 }
 

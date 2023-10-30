@@ -59,7 +59,7 @@ public class CourseRepositoryImpl implements CourseRepository{
 //                @Override
 //                public Course mapRow(ResultSet rs, int rowNum) throws SQLException {
 //                    Course course = new Course();
-//                    course.setCourseId(rs.getInt("course_id"));
+//                    course.setCourseEnrolId(rs.getInt("course_enrol_Id"));
 //                    course.setCourseName(rs.getString("course_name"));
 //                    return course;
 //                }
@@ -74,12 +74,12 @@ public class CourseRepositoryImpl implements CourseRepository{
 //    @Override
 //    public Course getCourseById(int id) {
 //        try {
-//            String query = "select * from course where course_id=?";
+//            String query = "select * from course where course_enrol_Id=?";
 //            return jdbcTemplate.queryForObject(query, new Object[]{id}, new RowMapper<Course>() {
 //                @Override
 //                public Course mapRow(ResultSet rs, int rowNum) throws SQLException {
 //                    Course course = new Course();
-//                    course.setCourseId(rs.getInt("course_id"));
+//                    course.setCourseEnrolId(rs.getInt("course_enrol_Id"));
 //                    course.setCourseName(rs.getString("course_name"));
 //                    return course;
 //                }
@@ -95,7 +95,7 @@ public class CourseRepositoryImpl implements CourseRepository{
 //    public Course updateCourse(Course course, int id) {
 //        try{
 //            String query = "update course set course_name=? " +
-//                    "where course_id=?";
+//                    "where course_enrol_Id=?";
 //            jdbcTemplate.update(query, course.getCourseName(), id);
 //            return course;
 //        }catch(Exception ex){
@@ -108,7 +108,7 @@ public class CourseRepositoryImpl implements CourseRepository{
 //    @Override
 //    public String deleteCourse(int id) {
 //        try {
-//            String query = "delete from course where course_id = ?";
+//            String query = "delete from course where course_enrol_Id = ?";
 //            jdbcTemplate.update(query, id);
 //            return "Course with id = " + id + " has been removed!";
 //        }catch (Exception ex){

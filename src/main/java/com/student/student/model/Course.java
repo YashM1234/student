@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course {
-    private int courseId;
+    private int courseEnrolId;
     private String courseName;
 
     public Course(String course_name) {
