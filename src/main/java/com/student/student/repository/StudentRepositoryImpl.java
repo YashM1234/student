@@ -200,11 +200,12 @@ public class StudentRepositoryImpl implements StudentRepository{
     }
 
     private void updateCourse(Student student, int studentId){
-        String query = "update course set course_name = ? where student_id = ?";
+        String query = "update course set course_name = ? where student_id = ? and course_id = ?";
         for(Course course: student.getCourses_name()){
-            jdbcTemplate.update(query, course.getCourseName(), studentId);
+            jdbcTemplate.update(query, course.getCourseName(), studentId, course.getCourseId());
         }
     }
+
 
 }
 
